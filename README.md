@@ -26,3 +26,8 @@ You do _not_ need to set up a database or any interactivity on the webpage yet.
 Instructions for that will come later in the course!
 
 yanmo's version of Boot.dev's Notely app
+
+### Test Status
+
+- ci workflow badge:
+  - ![test status image](https://github.com/yanmoyy/learn-cicd/actions/workflows/ci.yml/badge.svg)
