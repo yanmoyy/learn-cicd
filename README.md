@@ -3,31 +3,28 @@
 This repo contains the starter code for the "Notely" application for the "Learn
 CICD" course on [Boot.dev](https://boot.dev).
 
-## Local Development
+- Simple CRUD app, but robust CI/CD
 
-Make sure you're on Go version 1.22+.
+## Accomplishments
 
-Create a `.env` file in the root of the project with the following contents:
+### CI
 
-```bash
-PORT="8080"
-```
+Set up a `CI(Continuous Integration)` pipeline with `Github Actions` that
+ensures new PRs pass certain checks before they are merged to `main`:
 
-Run the server:
+- Unit tests pass
+- Formatting checks pass
+- Linting checks pass
+- Security checks pass
 
-```bash
-go build -o notely && ./notely
-```
+### CD
 
-_This starts the server in non-database mode._ It will serve a simple webpage at
-`http://localhost:8080`.
+Configured a `cloud-based SQLite` database hosted on `Turso` You set up a
+`CD(Continuous Deployment` pipeline with `GitHub Actions` that does the
+following whenever changes are merged into `main`:
 
-You do _not_ need to set up a database or any interactivity on the webpage yet.
-Instructions for that will come later in the course!
-
-yanmo's version of Boot.dev's Notely app
-
-### Test Status
-
-- ci workflow badge:
-  - ![test status image](https://github.com/yanmoyy/learn-cicd/actions/workflows/ci.yml/badge.svg)
+- Builds a new server binary
+- Builds a new `Docker image` for the server
+- Pushes the Docker image to the `Google Artifact Registry`
+- Deploys a new `Cloud Run` revision with the new image and serves the app to
+  the public internet
